@@ -1,14 +1,8 @@
 package com.c7.course.config;
 
-import com.c7.course.entities.Category;
-import com.c7.course.entities.Order;
-import com.c7.course.entities.Product;
-import com.c7.course.entities.User;
+import com.c7.course.entities.*;
 import com.c7.course.entities.enums.OrderStatus;
-import com.c7.course.repositories.CategoryRepository;
-import com.c7.course.repositories.OrderRepository;
-import com.c7.course.repositories.ProductRepository;
-import com.c7.course.repositories.UserRepository;
+import com.c7.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +23,9 @@ public class TestConfig implements CommandLineRunner {
     private ProductRepository productRepository;
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
     @Override
     public void run(String... args) throws Exception {
 
@@ -63,5 +60,14 @@ public class TestConfig implements CommandLineRunner {
         p5.getCategories().add(cat2);
 
         productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+
+        OrderItem oi1 = new OrderItem(o1, p1, 2);
+        OrderItem oi2 = new OrderItem(o1, p3, 1);
+        OrderItem oi3 = new OrderItem(o2, p3, 2);
+        OrderItem oi4 = new OrderItem(o3, p5, 2);
+
+
+        orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
+
     }
 }
