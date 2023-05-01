@@ -41,7 +41,7 @@ public class UserService {
         }
     }
     public User update(Long id, User obj){
-        User entity = userRepository.findById(id).get();
+        User entity = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
         updateData(entity, obj);
         userRepository.save(entity);
         return entity;
