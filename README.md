@@ -1,6 +1,11 @@
 # Workshop with Spring Boot 3
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Clauderlan/workshop-spring3/blob/main/LICENSE) 
-
+# What i learned so far
+- Java Spring Web
+- H2 Database Engine
+- JPA with PostgreSQL
+- More about relationships in the database
+- More about normalization in the database
 # Sobre o projeto
 
 Workshop é uma aplicação backend web construída a fim de estudo e especialização usando o framework Spring Boot 3, auxiliado do JPA / Hibernate.
